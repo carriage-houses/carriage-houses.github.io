@@ -1,0 +1,78 @@
+---
+layout: default
+title: Photo Gallery
+description: Photos of Carriage Houses garage condominiums in DeSoto, KS
+---
+
+<div class="page-header">
+  <h1>Photo Gallery</h1>
+</div>
+
+<div class="gallery-grid">
+  {% assign gallery_images = "
+    16E59AF2-46CD-4081-B027-105520546A4F.jpeg,
+    4003FF95-9EE7-4858-94AB-67BC86FCA3B6.jpeg,
+    4093F51D-B0DF-4C46-8EEC-D480A8841A17.jpeg,
+    47B47DCD-C0BB-4D9D-8404-6EC247945D4D.jpeg,
+    4F6C689E-EA3A-43A3-934A-AF0E975B73BB.jpeg,
+    5E670F71-AD42-465B-A370-77E61EA91D88.jpeg,
+    64550B21-C4CE-4BC3-A5B9-BBD21E35DB92.jpeg,
+    6C625B4C-49E1-488B-A05A-46CD110A87AE.jpeg,
+    6CD06C50-354D-4021-8CBC-3CF8D2863B5F.jpeg,
+    75F795B0-9D50-43C1-B69B-217CBDF7B48B.jpeg,
+    84EFF68E-EF31-4A02-9DC6-894B6B3B5760.jpeg,
+    A42DFE6A-8B93-4F39-800E-6680F5E78AFF.jpeg,
+    AE6C959A-BAA3-4C78-92D4-1F582FF8A3B3.jpeg,
+    B06FDD98-DD5C-4261-9192-4731DCB0D2D3.jpeg,
+    D8F42B27-407F-43AC-95A1-1458C14E2C07.jpeg,
+    E8EB4BE5-2F73-4C5B-998C-E8EEF609FCF5.jpeg,
+    F1F052AC-BCE6-4260-A08E-F5F3AB5286DA.jpeg,
+    F48CB8F3-96F2-4731-A192-5673846AFD1C.jpeg,
+    F69EC2D7-3A57-434D-9D46-66AAE6EFB62B.jpeg
+  " | split: "," %}
+  {% for img in gallery_images %}
+    {% assign img_name = img | strip %}
+    <img
+      src="{{ '/assets/images/gallery/' | append: img_name | relative_url }}"
+      alt="Carriage Houses garage condo"
+      loading="lazy"
+      onclick="openLightbox(this)"
+    >
+  {% endfor %}
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-prev" onclick="stepLightbox(-1)">&#8249;</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lightbox-next" onclick="stepLightbox(1)">&#8250;</button>
+</div>
+
+<script>
+var images = Array.from(document.querySelectorAll('.gallery-grid img'));
+var current = 0;
+
+function openLightbox(el) {
+  current = images.indexOf(el);
+  showImage();
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+function stepLightbox(dir) {
+  current = (current + dir + images.length) % images.length;
+  showImage();
+}
+function showImage() {
+  document.getElementById('lightbox-img').src = images[current].src;
+}
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') stepLightbox(-1);
+  if (e.key === 'ArrowRight') stepLightbox(1);
+});
+</script>

@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --navy: #1a2340;
+  --navy-light: #243057;
+  --gold: #b8972a;
+  --text: #333;
+  --light-bg: #f7f7f7;
+  --white: #fff;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ── Navigation ── */
+nav {
+  background: var(--navy);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.nav-brand {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  padding: 1rem 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 1.2rem 1rem;
+  display: block;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+  background: var(--navy-light);
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  min-height: 520px;
+  background: var(--navy) center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 18, 40, 0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  padding: 3rem 2rem;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content .tagline {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 400;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.hero-content .address {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  letter-spacing: 0.05em;
+}
+
+/* ── Sections ── */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-dark {
+  background: var(--light-bg);
+}
+
+.section-dark .section {
+  max-width: 100%;
+}
+
+.section h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+}
+
+.section h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.section p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+/* ── Two-col layout ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+/* ── Features grid ── */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: var(--white);
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid var(--gold);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+/* ── Contact section ── */
+.contact-section {
+  background: var(--navy);
+  color: var(--white);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.contact-section p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.contact-info a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 4px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.contact-info a:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.1);
+}
+
+.contact-info .address-block {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  line-height: 1.8;
+}
+
+/* ── Photo Gallery ── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.gallery-grid img:hover {
+  opacity: 0.9;
+  transform: scale(1.01);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  color: var(--white);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+}
+
+.lightbox-close {
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2.5rem;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 4rem;
+  padding: 0 1rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: 1;
+}
+
+.lightbox-prev { left: 1rem; }
+.lightbox-next { right: 1rem; }
+
+/* ── Page header (non-hero pages) ── */
+.page-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+}
+
+/* ── About page ── */
+.about-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.about-section + .about-section {
+  padding-top: 0;
+}
+
+.about-section img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.quote-block {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--navy);
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  background: var(--light-bg);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ── Footer ── */
+footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  margin: 0 0.75rem;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: var(--white);
+}
+
+footer .footer-links {
+  margin-bottom: 0.75rem;
+}
+
+/* ── Prose pages (privacy, terms) ── */
+.prose {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.prose h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+/* ── Responsive nav ── */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+  }
+  .nav-brand { padding: 0.75rem 0; }
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    padding-bottom: 0.5rem;
+  }
+  .nav-links a { padding: 0.5rem 0.75rem; }
+}

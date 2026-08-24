@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:garagecondoskc.com)",
+      "Bash(curl -sL \"https://garagecondoskc.com/photo-gallery\")",
+      "Bash(curl -sL \"https://garagecondoskc.com/about\")",
+      "Bash(jekyll build *)"
+    ]
+  }
+}

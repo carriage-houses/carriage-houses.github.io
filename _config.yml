@@ -1,0 +1,14 @@
+title: Carriage Houses
+description: Kansas City's Great Garage Condo Community
+url: "https://garagecondoskc.com"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
