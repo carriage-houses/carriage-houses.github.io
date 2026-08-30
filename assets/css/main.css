@@ -128,9 +128,6 @@ nav {
   background: var(--light-bg);
 }
 
-.section-dark .section {
-  max-width: 100%;
-}
 
 .section h2 {
   font-family: 'Raleway', sans-serif;
@@ -151,6 +148,12 @@ nav {
 .section p {
   margin-bottom: 1rem;
   font-size: 1.05rem;
+}
+
+.section ul {
+  margin: 0.5rem 0 1.5rem 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
 /* ── Two-col layout ── */
@@ -324,6 +327,22 @@ nav {
 
 .lightbox-prev { left: 1rem; }
 .lightbox-next { right: 1rem; }
+
+/* ── CTA link ── */
+.cta-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.cta-link:hover {
+  border-bottom-color: var(--gold);
+}
 
 /* ── Page header (non-hero pages) ── */
 .page-header {

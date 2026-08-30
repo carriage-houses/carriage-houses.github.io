@@ -10,11 +10,12 @@
 <body>
 
 <nav>
-  <a class="nav-brand" href="{{ '/' | relative_url }}">Carriage Houses Garage Condo Community</a>
+  <a class="nav-brand" href="{{ '/' | relative_url }}">Carriage Houses Country Club</a>
   <ul class="nav-links">
     <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a></li>
     <li><a href="{{ '/photo-gallery/' | relative_url }}"{% if page.url contains 'photo-gallery' %} class="active"{% endif %}>Photo Gallery</a></li>
     <li><a href="{{ '/about/' | relative_url }}"{% if page.url contains 'about' %} class="active"{% endif %}>About</a></li>
+    <li><a href="{{ '/owner-information/' | relative_url }}"{% if page.url contains 'owner-information' %} class="active"{% endif %}>Owner Information</a></li>
   </ul>
 </nav>
 
