@@ -1,11 +1,16 @@
 title: Carriage Houses
 description: A hobby garage condo community
-url: "https://garagecondoskc.com"
+url: "https://carriagehouseskc.com"
 baseurl: ""
 
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+collections:
+  newsletters:
+    output: true
+    permalink: /newsletter/:name/
 
 # Exclude from build
 exclude:
